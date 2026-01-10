@@ -1,12 +1,12 @@
 const images = [
-  "img1.jpg","img1.jpg",
-  "img2.jpg","img2.jpg",
-  "img3.jpg","img3.jpg",
-  "img4.jpg","img4.jpg",
-  "img5.jpg","img5.jpg",
-  "img6.jpg","img6.jpg",
-  "img7.jpg","img7.jpg",
-  "img8.jpg","img8.jpg"
+ "images/img1.jpg","images/img1.jpg",
+  "images/img2.jpg","images/img2.jpg",
+  "images/img3.jpg","images/img3.jpg",
+  "images/img4.jpg","images/img4.jpg",
+  "images/img5.jpg","images/img5.jpg",
+  "images/img6.jpg","images/img6.jpg",
+  "images/img7.jpg","images/img7.jpg",
+  "images/img8.jpg","images/img8.jpg"
 ];
 
 let firstCard = null;
@@ -64,3 +64,4 @@ function resetTurn() {
   [firstCard, secondCard] = [null, null];
   lockBoard = false;
 }
+
