@@ -54,11 +54,14 @@ socket.onmessage = e => {
 
   if (data.type === "init") {
     playerId = data.playerId;
-    lobby.classList.add("hidden");
-    game.classList.remove("hidden");
+    status.textContent = "Giocatore collegato ✔️";
   }
 
   if (data.type === "update") {
+    // quando arriva il primo update → il gioco parte
+    lobby.classList.add("hidden");
+    game.classList.remove("hidden");
+
     myTurn = data.gameState.turn === playerId;
     turnText.textContent = myTurn ? "Il tuo turno ❤️" : "Turno avversario…";
     scoreText.textContent = `${data.gameState.scores[0]} - ${data.gameState.scores[1]}`;
@@ -68,6 +71,7 @@ socket.onmessage = e => {
     alert("Partita già in corso");
   }
 };
+
 
 function flipCard(card) {
   card.classList.add("flip");
@@ -101,3 +105,4 @@ function resetTurn() {
   [firstCard, secondCard] = [null, null];
   lockBoard = false;
 }
+
